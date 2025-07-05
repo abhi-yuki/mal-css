@@ -1,0 +1,125 @@
+@import "https://valeriolyndon.github.io/MAL-Public-List-Designs/Clarity%20Theme/Theme%20-%20Compressed.css";
+@import "https://malscraper.azurewebsites.net/covers/auto/presets/dataimagelinkbefore";
+@import "https://valeriolyndon.github.io/MAL-Public-List-Designs/Clarity%20Theme/Mod%20-%20Hover%20Image%20Compressed.css";
+@import "https://valeriolyndon.github.io/MAL-Public-List-Designs/Clarity%20Theme/Mod%20-%20Dark%20Mode%20Compressed.css";
+
+/* Remove banner, cover, and gap */
+.cover-block,
+.cover,
+#cover-image-container,
+#list-container::before,
+#list-container > div:first-child,
+body::before,
+#mal_cs_listinfo,
+#mal_cs_otherlinks,
+#mal_control_strip,
+#list_surround::before {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Pull list to top */
+#list_surround,
+.list-container,
+#list-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  top: 0 !important;
+  position: relative !important;
+  z-index: 10;
+}
+
+/* Fix layout pushing down due to padding/margin */
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* Avatar + remove name */
+body {
+  --avatar: url(https://bg-so-1.zippyimage.com/2025/01/18/28bed91bf406baa5d5bac6941f3ee83c.png);
+  --name: "";
+  --character: none;
+}
+
+/* Score Descriptors */
+.score-na::before     { content: "Haven't decided"; }
+.score-1::before      { content: "Unredeemable"; }
+.score-2::before      { content: "Horrid"; }
+.score-3::before      { content: "Awful"; }
+.score-4::before      { content: "Bad"; }
+.score-5::before      { content: "Mediocre"; }
+.score-6::before      { content: "Nice"; }
+.score-7::before      { content: "Good"; }
+.score-8::before      { content: "Great"; }
+.score-9::before      { content: "Fantastic"; }
+.score-10::before     { content: "Masterpiece"; }
+
+/* Score tooltip */
+.score-label {
+  position: relative;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+.score-label:hover {
+  color: #fff !important;
+}
+.score-label::before {
+  position: absolute;
+  top: -4px;
+  left: -8px;
+  padding: 4px 8px 4px calc(100% + 12px);
+  background: #111;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: pre;
+  pointer-events: none;
+}
+.score-label:hover::before {
+  opacity: 1;
+}
+
+/* Remove header sections */
+.cover-block,
+.cover-image,
+.cover-block .image-container,
+.header-title,
+.header-info {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.header {
+  min-height: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Move the list up to fill the removed space */
+.list-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Optional: shift the tab nav closer if needed */
+.status-menu-container.fixed {
+  top: 0 !important;
+}
+/* Change footer credit to "List design by Abhi" */
+#copyright > a {
+  display: none !important;
+}
+#copyright::after {
+  content: "List design by Abhi." !important;
+  color: #999 !important;
+  display: inline-block !important;
+  margin-left: 6px;
+}
